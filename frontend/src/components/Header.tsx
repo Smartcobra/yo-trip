@@ -17,9 +17,9 @@ export default function Header() {
             <span className="brand-text">yo-trip</span>
           </Link>
           <div className="header-right">
-            <Link to="/pnr" className="nav-link">PNR Status</Link>
             {user ? (
               <>
+                <Link to="/pnr" className="nav-link">PNR Status</Link>
                 <Link to="/bookings" className="nav-link">My Bookings</Link>
                 <span className="greeting">Hi, {user.name}</span>
                 <button type="button" className="btn-outline" onClick={logout}>Logout</button>

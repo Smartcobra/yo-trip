@@ -3,12 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import AirportSelect from '../components/AirportSelect';
 import DatePicker from '../components/DatePicker';
-import { useBooking } from '../context/AppContext';
+import { useBooking, useAuth } from '../context/AppContext';
 import { todayIso } from '../utils/date';
 import './HomePage.css';
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const { setSearchParams } = useBooking();
   const [from, setFrom] = useState('DEL');
   const [to, setTo] = useState('BOM');
@@ -41,10 +42,12 @@ export default function HomePage() {
             <button type="button" className="btn-primary search-btn" onClick={search}>
               Search Flights
             </button>
-            <p className="home-pnr-link">
-              Already booked?{' '}
-              <Link to="/pnr">Check PNR status</Link>
-            </p>
+            {user && (
+              <p className="home-pnr-link">
+                Already booked?{' '}
+                <Link to="/pnr">Check PNR status</Link>
+              </p>
+            )}
           </div>
         </div>
       </section>

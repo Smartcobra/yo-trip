@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { bookingApi } from '../api/client';
-import { useAuth } from '../context/AppContext';
 import type { Booking } from '../types';
 import {
   formatBookingDate,
@@ -14,26 +13,18 @@ import {
 import './BookingsPage.css';
 
 export default function BookingsPage() {
-  const navigate = useNavigate();
-  const { user, loading: authLoading } = useAuth();
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (authLoading) return;
-    if (!user) {
-      navigate('/');
-      return;
-    }
-
     setLoading(true);
     bookingApi
       .list()
       .then((r) => setBookings(r.data))
       .catch(() => setError('Could not load your bookings. Please try again.'))
       .finally(() => setLoading(false));
-  }, [user, authLoading, navigate]);
+  }, []);
 
   return (
     <div className="page">

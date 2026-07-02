@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import { bookingApi } from '../api/client';
-import { useAuth } from '../context/AppContext';
 import type { Booking } from '../types';
 import {
   formatBookingDate,
@@ -24,17 +23,11 @@ function FareRow({ label, value, highlight }: { label: string; value: string; hi
 export default function BookingDetailPage() {
   const { bookingId } = useParams<{ bookingId: string }>();
   const navigate = useNavigate();
-  const { user, loading: authLoading } = useAuth();
   const [booking, setBooking] = useState<Booking | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (authLoading) return;
-    if (!user) {
-      navigate('/');
-      return;
-    }
     if (!bookingId) {
       navigate('/bookings');
       return;
@@ -46,7 +39,7 @@ export default function BookingDetailPage() {
       .then((r) => setBooking(r.data))
       .catch(() => setError('Booking not found or you do not have access.'))
       .finally(() => setLoading(false));
-  }, [user, authLoading, bookingId, navigate]);
+  }, [bookingId, navigate]);
 
   return (
     <div className="page">

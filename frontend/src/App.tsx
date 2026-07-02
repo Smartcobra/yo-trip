@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import RequireAuth from './components/RequireAuth';
 import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import CheckoutPage from './pages/CheckoutPage';
@@ -13,13 +14,13 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/search" element={<SearchPage />} />
-      <Route path="/checkout" element={<CheckoutPage />} />
-      <Route path="/final" element={<TravellerPage />} />
-      <Route path="/confirmation" element={<ConfirmationPage />} />
-      <Route path="/bookings" element={<BookingsPage />} />
-      <Route path="/bookings/:bookingId" element={<BookingDetailPage />} />
-      <Route path="/pnr" element={<PnrPage />} />
-      <Route path="/pnr/:code" element={<PnrPage />} />
+      <Route path="/checkout" element={<RequireAuth><CheckoutPage /></RequireAuth>} />
+      <Route path="/final" element={<RequireAuth><TravellerPage /></RequireAuth>} />
+      <Route path="/confirmation" element={<RequireAuth><ConfirmationPage /></RequireAuth>} />
+      <Route path="/bookings" element={<RequireAuth><BookingsPage /></RequireAuth>} />
+      <Route path="/bookings/:bookingId" element={<RequireAuth><BookingDetailPage /></RequireAuth>} />
+      <Route path="/pnr" element={<RequireAuth><PnrPage /></RequireAuth>} />
+      <Route path="/pnr/:code" element={<RequireAuth><PnrPage /></RequireAuth>} />
     </Routes>
   );
 }
