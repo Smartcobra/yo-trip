@@ -1,0 +1,329 @@
+.booking-detail {
+  padding: 28px 0 48px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--brand);
+}
+
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.detail-header h1 {
+  margin: 12px 0 6px;
+  font-size: 1.85rem;
+  font-weight: 700;
+}
+
+.detail-meta {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.detail-id-block {
+  text-align: right;
+}
+
+.detail-id-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.detail-id {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--glass-border);
+  font-size: 13px;
+  color: var(--brand);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+
+.detail-route-card {
+  grid-column: 1 / -1;
+}
+
+.detail-route-card h2,
+.detail-fare-card h2,
+.detail-traveller-card h2,
+.detail-actions-card h2 {
+  margin: 0 0 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.detail-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 0 8px;
+}
+
+.detail-airport {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-airport-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.detail-iata {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.detail-airport-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.detail-route-visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 48px;
+}
+
+.detail-route-arc {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  background: linear-gradient(90deg, var(--brand), var(--accent-2), var(--accent));
+  opacity: 0.45;
+  border-radius: 2px;
+}
+
+.detail-route-plane {
+  position: relative;
+  z-index: 1;
+  font-size: 1.25rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(20, 25, 50, 0.9);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px rgba(45, 212, 191, 0.2);
+}
+
+.fare-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.fare-row span:last-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.fare-row-total {
+  margin-bottom: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.fare-row-total span:last-child {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.coupon-tag {
+  display: inline-block;
+  margin: 4px 0 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: var(--success);
+}
+
+.detail-divider {
+  border: none;
+  border-top: 1px solid var(--glass-border);
+  margin: 16px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 14px;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.detail-actions-text {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.detail-cta,
+.detail-cta-inline {
+  color: #0b1020;
+}
+
+.bookings-detail-empty {
+  text-align: center;
+  padding: 56px 32px;
+  max-width: 480px;
+  margin: 24px auto 0;
+}
+
+.bookings-detail-empty .empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.2), rgba(99, 102, 241, 0.2));
+  border: 1px solid var(--glass-border);
+}
+
+.status-pill {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.status-confirmed {
+  background: rgba(52, 211, 153, 0.18);
+  color: var(--success);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+.status-pending {
+  background: rgba(99, 102, 241, 0.18);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+}
+
+.status-cancelled {
+  background: rgba(244, 63, 94, 0.15);
+  color: #fda4af;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+.status-draft {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  border: 1px solid var(--glass-border);
+}
+
+.detail-skeleton {
+  min-height: 420px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: detail-shimmer 1.4s infinite;
+}
+
+@keyframes detail-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-header {
+    flex-direction: column;
+  }
+
+  .detail-id-block {
+    text-align: left;
+  }
+
+  .detail-iata {
+    font-size: 2rem;
+  }
+
+  .detail-route {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .detail-route-visual {
+    order: 3;
+    width: 100%;
+    min-width: unset;
+  }
+}

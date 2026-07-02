@@ -1,0 +1,38 @@
+.airport-select { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.airport-select label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.airport-select select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.airport-select select:focus {
+  border-color: var(--brand);
+}
+
+.airport-select option {
+  background: #1a1040;
+  color: var(--text);
+}
+
+@media (max-width: 540px) {
+  .airport-select { grid-template-columns: 1fr; }
+}

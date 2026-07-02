@@ -1,0 +1,50 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: you-trip
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://202.137.222.34:5432/makemytrip?currentSchema=research}
+    username: ${DATABASE_USERNAME:mmt}
+    password: ${DATABASE_PASSWORD:mmt123}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: research
+  mail:
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:jitu.learn@gmail.com}
+    password: ${SMTP_PASSWORD:atraczcetjmuhbdy}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-this-secret-key-to-at-least-32-characters-long}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
+  razorpay:
+    mode: ${RAZORPAY_MODE:test}
+    key-id: ${RAZORPAY_KEY_ID:rzp_test_T5YNGA0szLD0cp}
+    key-secret: ${RAZORPAY_KEY_SECRET:1wTYgfv73xcYUjVFhznsx0hI}
+  otp:
+    expiry-minutes: 5
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha

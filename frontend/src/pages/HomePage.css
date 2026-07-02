@@ -1,0 +1,66 @@
+.hero {
+  padding: 56px 0 80px;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.search-card {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 40px;
+}
+
+.search-card h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.search-card .subtitle {
+  margin: 0 0 28px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.search-date {
+  margin-top: 20px;
+  max-width: 280px;
+}
+
+.search-btn {
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+
+.home-pnr-link {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.home-pnr-link a {
+  color: var(--brand);
+  font-weight: 500;
+  transition: opacity 0.15s;
+}
+
+.home-pnr-link a:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,52 @@
+.flight-card {
+  margin-bottom: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.flight-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(45, 212, 191, 0.35);
+}
+
+.flight-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 0.8fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.muted { margin: 4px 0 0; font-size: 13px; color: var(--text-muted); }
+
+.times {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.times b { display: block; font-size: 1.25rem; font-weight: 600; }
+.times span { font-size: 12px; color: var(--text-muted); }
+
+.arrow {
+  color: var(--brand);
+  font-size: 1.25rem;
+  opacity: 0.7;
+}
+
+.price-col { text-align: right; }
+
+.price-col h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .flight-row { grid-template-columns: 1fr; text-align: center; }
+  .price-col { text-align: center; }
+}
